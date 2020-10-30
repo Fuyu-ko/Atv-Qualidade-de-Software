@@ -67,7 +67,7 @@ create table auditoria(
 
 create table checkList(
 	idAvaliacao int not null,
-    idAuditoria int not null,
+    idAuditoriaC int not null,
     idCheck int not null unique,
     artefato text not null,
 	pergunta text not null,
@@ -75,13 +75,13 @@ create table checkList(
 	item text not null,
 	obs longtext,
     primary key(idAvaliacao),
-    foreign key(idAuditoria) references auditoria(idAuditoria)
+    foreign key(idAuditoriaC) references auditoria(idAuditoria)
 ) engine=InnoDB default charset=latin1;
 
 create table nConformidades (
 	 idNC int not null,
-     idAvaliacao int not null,
-     idAuditoria int not null,
+     idAvaliacaoNc int not null,
+     idAuditoriaNc int not null,
      idCheck int not null unique,
 	 classNC char not null,
      NcEncontradas longtext not null,
@@ -94,6 +94,6 @@ create table nConformidades (
 	 novoPrazo date,
 	 dResolucao date,
      primary key(idNC),
-    foreign key(idAvaliacao) references checkList(idAvaliacao),
-    foreign key(idAuditoria) references auditoria(idAuditoria)
+    foreign key(idAvaliacaoNc) references checkList(idAvaliacao),
+    foreign key(idAuditoriaNc) references auditoria(idAuditoria)
 ) engine=InnoDB default charset=latin1;
