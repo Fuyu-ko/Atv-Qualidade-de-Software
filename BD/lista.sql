@@ -16,12 +16,9 @@ create schema if not exists lista;
 USE lista;
 
 create table nConformidades (
-	 arqAuditoria char not null,
 	 idNC char not null,
-	 item text not null,
+	 arqAuditoria char not null,
 	 classNC char not null,
-	 NCencontrada longtext not null,
-	 acaoCorrecao longtext,
 	 prazo date not null,
 	 responsavel text not null,
 	 dEnvio date,
@@ -29,5 +26,30 @@ create table nConformidades (
 	 escalonado text,
 	 novoPrazo date,
 	 dResolucao date,
-	 obs longtext
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+     primary key(idNC)
+) engine=InnoDB default charset=latin1;
+
+create table artefatos(
+	idArtefato int not null unique,
+	artefato text,
+	pergunta text,
+	checkagem enum("Sim", "Não", "Não aplicável") not null,
+    primary key(idArtefato)
+) engine=InnoDB default charset=latin1;
+
+create table avaliacao(
+	item text not null,
+	NCencontradas longtext not null,
+	acaoCorretiva longtext,
+	obs longtext,
+	foreign key(idnc) references nConformidades(idNC),
+    foreign key(idart) references artefatos(idArtefato)
+) engine=InnoDB default charset=latin1;
+
+create table auditoria(
+	descricaoAvaliacao longtext not null,
+	auditor text not null,
+	dAuditoria date
+) engine=InnoDB default charset=latin1;
+
+
