@@ -1,0 +1,49 @@
+> O que deve ter nas não conformidades:
+- Arquivo de auditoria
+- ID da Não Conformidade
+- Item avaliado
+- Classificação da NC
+- Não Confirmidade Encontrada
+- Ação corretiva 
+- Prazo de correção
+- Responsável pela correção
+- Data de envio do comunicado
+- Data de reavaliação
+- Escalonado
+- Novo Prazo
+- Data de Resolução
+- Observações
+
+> O que deve ter no checklist
+- ID
+- Artefato
+- Item avaliado (funcionalidade/recurso)
+- Pergunta
+- Check (sim/não/não aplicável)
+- Não Conformidades Encontradas
+- Ação Corretiva Indicada
+- Observações
+
+> O que deve ter na auditoria
+- Descrição da Avaliação:
+- Auditor(a) de QA:
+- Data de auditoria:
+- Tempo total de auditoria:
+
+> Níveis de aderêrencia definidos
+0 - 40%
+41 - 60%
+61 - 80%
+81 - 90%
+91 - 100%
+
+> Classificação e prazos
+Advertência ... Não se aplica
+Baixa-Simples ... 4 dias
+Baixa-Complexa ... 5 dias
+Média-Simples ... 3 dias
+Média-Complexa ... 4 dias
+Alta-Simples ... 2 dias
+Alta-Complexa ... 3 dias
+Urgente-Simples ... 1 dia
+Urgente-Complexa ... 2 dias
