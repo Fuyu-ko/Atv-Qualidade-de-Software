@@ -138,8 +138,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                             echo $row["checkagem"];
                             echo "</td><td>";
                             echo $row["obs"];
-                            echo "</td><td>";
-                        
+                            echo "</td><td>";                 
                 ?>
                         
                  <?php
@@ -154,22 +153,23 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
             mysqli_close($conn);  //Encerra conexao com o BD
 
             ?>
+            <p>
+                <input type="button" value="Adicionar Pergunta" class="w3-btn w3-blue" onclick="window.location.href='../index.php'"></p>
         </div>
     </div>
 
-    <button class="w3-btn w3-red> Adicionar Pergunta</button>
+
     <footer class="w3-panel w3-padding-32 w3-card-4 w3-light-grey w3-center w3-opacity">
-    <p>
-        <nav>
-            <a class="w3-button w3-theme w3-hover-blue"
-               onclick="document.getElementById('id01').style.display='block'">Sobre</a>
-        </nav>
-    </p>
+        <p>
+            <nav>
+                <a class="w3-button w3-theme w3-hover-blue"
+                   onclick="document.getElementById('id01').style.display='block'">Sobre</a>
+            </nav>
+        </p>
     </footer>
 
 <!-- FIM PRINCIPAL -->
 </div>
-
 <!-- Inclui RODAPE.PHP  -->
 <?php require 'rodape.php';?>
 </body>

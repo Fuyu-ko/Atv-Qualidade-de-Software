@@ -192,7 +192,6 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
             </div>
         </p>
     </div>
-
     <footer class="w3-panel w3-padding-32 w3-card-4 w3-light-grey w3-center w3-opacity">
     <p>
         <nav>
@@ -204,7 +203,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 
 </div>
 
-<!-- Inclui RODAPE.PHP  -->
+<!-- Inclui RODAPE.PHP -->
 <?php require 'rodape.php';?>
 </body>
 </html>

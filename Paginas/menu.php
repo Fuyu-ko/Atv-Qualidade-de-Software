@@ -9,17 +9,16 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 <!-- Top -->
 	<div class="w3-top">
 
-		<div class="w3-row w3-white w3-padding">
+		<div class="w3-row w3-blue w3-padding">
 
-			<div class="w3-half" style="margin:4px 0 6px 0">
-				<a href="."><img src='..\Imagens/logo.png' alt='QualityMap' width="89px" height="32px"></a>
+			<div class="w3-half" style="margin:4px 0 3px 0">
+				<a href="."><img src='..\Imagens/logo.png' alt='QualityMap' width="100px" height="40px"></a>
 			</div>
 
 			<div class="w3-half w3-margin-top w3-wide w3-hide-medium w3-hide-small">
-				<div class="w3-right"><a href="../entrar.php"><img src="../Imagens/sair.png" width="25" height="25" href="../entrar.php"></div>
+				<div class="w3-right"><a href="../entrar.php"><img src="../Imagens/home.png" width="30" height="25" href="../entrar.php"></div>
 			</div>
 		</div>
-		
 	</div>
 
 	<!-- Sidebar -->
@@ -37,9 +36,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 			</div>
 			<a class="w3-bar-item w3-button" href="cadastrarAudi.php">Adicionar Auditoria</a>
 			<a class="w3-bar-item w3-button" href="listarAudi.php">Histórico de Auditorias</a>
-		
 			<a class="w3-bar-item w3-button" href='adicionarNC.php'>Adicionar Não Conformidade</a>
-		
 			<a class="w3-bar-item w3-button" href="checkAdd.php">Adicionar CheckList</a>
 		</div>
 	</div>
