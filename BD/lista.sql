@@ -12,7 +12,7 @@ SET @@global.time_zone = '+3:00';
 
 SET @@global.time_zone = '+3:00';
 
-#DROP database lista;
+#auditoriaDROP database lista;
 create schema if not exists lista;
 USE lista;
 
@@ -59,26 +59,25 @@ create table nConformidades (
 
 create table auditoria(
 	idAuditoria int not null,
-	titulo text not null, # Precisa de um título ou algo q facilite a identificação além do id, tbm ajuda nas outras 2 tabelas
+	titulo longtext not null, # Precisa de um título ou algo q facilite a identificação além do id, tbm ajuda nas outras 2 tabelas
 	descricaoAvaliacao longtext not null,
-	auditor text not null,
+	auditor longtext not null,
 	dataAuditoria date, 
     primary key(idAuditoria)
 ) engine=InnoDB default charset=utf8;
 
 # Placeholder > Apagar dps q tiver uma forma de adicionar
 insert into auditoria(idAuditoria, titulo, descricaoAvaliacao, auditor) values
-(1, "Lorem ipsum", "Esse texto está sendo usado apenas para testes", "Placeholder P");
+(1, "Avaliacao de Qualidade do Trello", "Esse texto está sendo usado apenas para testes", "Maria Teste 1");
 
 create table checkList(
 	idAvaliacao int not null,
     idAuditoriaC int not null,
-    nomeCheck text not null, # O checklist precisa de um nome > É oq vamos mostrar no título quando a pessoa for selecionar o checklist
-    # idCheck int not null unique, -> Supostamente esse era o PK, acho q dá para tirar
-    artefato text not null,
-	pergunta text not null,
-	checkagem enum("Sim", "Não", "Não aplicável") not null, # Tbm não lembro oq era T^T
-	item text not null, # Isso tbm não
+ #   nomeCheck text not null, # O checklist precisa de um nome > É oq vamos mostrar no título quando a pessoa for selecionar o checklist
+ # ~Ana é pra isso q serve a FK idAuditoria, pra conecta com a respectiva auditoria q ja tem descrição
+	pergunta longtext not null,
+	checkagem enum("Sim", "Não", "Não aplicável") not null,
+	item text not null,
 	obs longtext,
     primary key(idAvaliacao),
     foreign key(idAuditoriaC) references auditoria(idAuditoria)
@@ -86,22 +85,18 @@ create table checkList(
 
 # Placeholder > Apagar dps q tiver uma forma de adicionar
 insert into checkList values
-(1, 1, "Lorem Ipsum 2", "Placeholder", "Oq era a pergunta mesmo?", "Não", "Placeholder 2", "Lorem ipsum dolor sit amet, 
-	consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-	Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-	Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
+(1, 1, "Inserir pergunta aqui", "Não", "Trello", "Nao ha");
 
 create table nConformidades (
 	idNC int not null auto_increment,
     idAvaliacaoNc int not null,
     idAuditoriaNc int not null,
-    # idCheck int not null unique, -> Isso supostamente é a FK de checklist
+	artefato text not null,
 	classNC text not null,
     NcEncontradas longtext not null,
     acaoCorretiva longtext not null,
 	prazo date not null,
-	responsavel text not null, # Esse é o mesmo responsável pela auditoria?
+	responsavel text not null, # Esse é o mesmo responsável pela auditoria? > ~Ana  Não, este é o responsável pela correção
 	dEnvio date,
 	dReavaliacao date,
 	escalonado text,
@@ -113,6 +108,7 @@ create table nConformidades (
 ) engine=InnoDB default charset=utf8;
 
 # A classificação pode ter uma tabela tbm, facilitaria nossa vida em 100%
+# > ~Ana justissimo
 create table classificacao (
 	idClass int not null auto_increment,
     class tinytext not null,
@@ -121,7 +117,7 @@ create table classificacao (
 ) engine=InnoDB default charset=utf8;
 
 insert into classificacao(class, tempo) values
-("Advertência", 0),
+("Advertência (Não se Aplica)", 0),
 ("Baixa-Simples", 4),
 ("Baixa-Complexa", 5),
 ("Média-Simples", 3),
@@ -138,5 +134,5 @@ insert into classificacao(class, tempo) values
 # Dá para deixa do lado de cada coisa uma breve descrição em comentário, para facilitar nossa vida e a da prof
 # Fiz umas adições na lista - Gabe
 
-select*from auditoria;
-select*from nConformidades;
+# select*from auditoria;
+# select*from nConformidades;

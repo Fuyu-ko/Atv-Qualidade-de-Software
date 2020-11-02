@@ -1,16 +1,14 @@
 <!-------------------------------------------------------------------------------
-PROJETO DE EXPERIÊNCIA CRIATIVA 02:
-SEA+
+PROJETO QUALIDADE DE SOFTWARE:
 PUCPR
 ENGENHARIA DE SOFTWARE
 
-Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
+Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 ---------------------------------------------------------------------------------->
 <html>
 <head>
-
-    <title>Qualidade de Software</title>
-    <link rel="icon" type="image/png" href="../imagens/Logo.ico"/>
+    <title>Adicionar Auditoria</title>
+    <link rel="icon" type="image/png" href="../imagens/logoIcone.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
@@ -37,7 +35,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
     <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-        <h1 class="w3-xxlarge">Add Auditoria</h1>
+        <h1 class="w3-xxlarge">Adicionar Auditoria</h1>
 
         <p class="w3-large">
             <div class="w3-code cssHigh notranslate">
@@ -54,7 +52,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
                 <div class="w3-responsive w3-card-4">
                     <div class="w3-container w3-theme">
-                        <h2>Informe os dados da Auditoria</h2>
+                        <h2>Informe os dados da Nova Auditoria</h2>
                     </div>
                     <form class="w3-container" action="cadastrarprodBD.php" method="post" onsubmit="return check(this.form)">
 						<input type="hidden" id="acaoForm" name="acaoForm" value="Cada">
@@ -85,13 +83,18 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
 
 	<footer class="w3-panel w3-padding-32 w3-card-4 w3-light-grey w3-center w3-opacity">
-    
-	</footer>
+    <p>
+        <nav>
+            <a class="w3-button w3-theme w3-hover-blue"
+               onclick="document.getElementById('id01').style.display='block'">Sobre</a>
+        </nav>
+    </p>
+    </footer>
 
 <!-- FIM PRINCIPAL -->
 </div>
 
 <!-- Inclui RODAPE.PHP  -->
-
+<?php require 'rodape.php';?>
 </body>
 </html>

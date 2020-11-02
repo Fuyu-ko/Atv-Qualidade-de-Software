@@ -1,15 +1,15 @@
 <!-------------------------------------------------------------------------------
-PROJETO DE EXPERIÊNCIA CRIATIVA 02:
-SEA+
+PROJETO QUALIDADE DE SOFTWARE:
 PUCPR
 ENGENHARIA DE SOFTWARE
 
-Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
+Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 ---------------------------------------------------------------------------------->
+
 <html>
 <head>
-   <title>SEA+</title>
-    <link rel="icon" type="image/png" href="../imagens/Logo.ico"/>
+    <title>Histórivo de Auditorias</title>
+    <link rel="icon" type="image/png" href="../imagens/logoIcone.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
@@ -54,7 +54,7 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
     <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-        <h1 class="w3-xxlarge">Auditorias</h1>
+        <h1 class="w3-xxlarge">Histórico de Auditorias</h1>
 
         <p class="w3-large">
         <p>
@@ -98,12 +98,14 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
             $sql = "SELECT idAuditoria, DescricaoAvaliacao, auditor, dataAuditoria FROM auditoria";
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
+                //NÃO CONSIGO CENTRALIZAR ISSO
                 echo "<table class='w3-table-all'>";
                 echo "  <tr>";
-                echo "    <th width='20%'>Id</th>";
-                echo "    <th width='30%'>Descricao</th>";
-                echo "    <th width='30%'>Auditor</th>";
-                echo "    <th width='15%'>Data</th>";
+                echo "    <th width='10%'>Id</th>";
+                echo "    <th width='40%'>Descricao</th>";
+                echo "    <th width='10%'>Auditor</th>";
+                echo "    <th width='10%'>Data</th>";
+                echo "    <th width='10%'> </th>";
                 echo "    <th width='10%'> </th>";
                 echo "  </tr>";
 
@@ -130,7 +132,8 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                             echo "</td><td>";
                         
                 ?>
-                        <a href='estoqueListarPneuIndica.php?id=<?php echo $cod; ?>'><img src='' title='Atualizar' width='30'></a>
+                        <a href='estoqueListarPneuIndica.php?id=<?php echo $cod; ?>'><img src='../imagens/cl.png' title='CheckList da Avaliação' width='45'></a>
+                        <a href='estoqueListarPneuIndica.php?id=<?php echo $cod; ?>'><img src='../imagens/nc1.png' title='Acompanhar Não Conformidades' width='45'></a>
                  <?php
                     }
                 }
@@ -148,17 +151,18 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
 
 
     <footer class="w3-panel w3-padding-32 w3-card-4 w3-light-grey w3-center w3-opacity">
-        <p>
-            <nav>
-                <a class="w3-button w3-theme w3-hover-blue"
-                   onclick="document.getElementById('id01').style.display='block'">Sobre</a>
-            </nav>
-        </p>
+    <p>
+        <nav>
+            <a class="w3-button w3-theme w3-hover-blue"
+               onclick="document.getElementById('id01').style.display='block'">Sobre</a>
+        </nav>
+    </p>
     </footer>
 
 <!-- FIM PRINCIPAL -->
 </div>
-<!-- Inclui RODAPE.PHP  -->
 
+<!-- Inclui RODAPE.PHP  -->
+<?php require 'rodape.php';?>
 </body>
 </html>

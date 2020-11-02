@@ -1,10 +1,9 @@
 <!-------------------------------------------------------------------------------
-PROJETO DE EXPERIÊNCIA CRIATIVA 02:
-SEA+
+PROJETO QUALIDADE DE SOFTWARE:
 PUCPR
 ENGENHARIA DE SOFTWARE
 
-Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
+Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 ---------------------------------------------------------------------------------->
 <html>
 	<head>
