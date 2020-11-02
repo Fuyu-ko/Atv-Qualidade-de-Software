@@ -31,7 +31,7 @@ Inclui MENU.PHP > Não temos um Menu, vamos fazer?
 <div class="w3-main w3-container" style="margin: center;">
 
 <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-  <h1 class="w3-xxlarge">Cadastrar Novo Pneu</h1>
+  <h1 class="w3-xxlarge">xxx</h1>
 
   <p class="w3-large">
   <div class="w3-code cssHigh notranslate">

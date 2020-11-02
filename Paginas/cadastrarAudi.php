@@ -54,12 +54,15 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                     <div class="w3-container w3-theme">
                         <h2>Informe os dados da Nova Auditoria</h2>
                     </div>
-                    <form class="w3-container" action="cadastrarprodBD.php" method="post" onsubmit="return check(this.form)">
+                    <form class="w3-container" action="cadastrarAudiBD.php" method="post" onsubmit="return check(this.form)">
 						<input type="hidden" id="acaoForm" name="acaoForm" value="Cada">
 						<p>
 						<label class="w3-text-deep-purple"><b>ID</b></label>
 						<input class="w3-input w3-border w3-light-grey" name="id" type="text" title="ID da Auditoria." required></p>
 						<p>
+                        <label class="w3-text-deep-purple"><b>Titulo</b></label>
+                        <input class="w3-input w3-border w3-light-grey" name="titulo" type="text" title="Titulo da Auditoria." required></p>
+                        <p>
 						<label class="w3-text-deep-purple"><b>Descricao</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="descricao" type="text" title="Descricao da Auditoria." required></p>
                         <p>
@@ -69,8 +72,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                         <label class="w3-text-deep-purple"><b>Data</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="data" type="text" title="Data da Auditoria." required></p>
                         <p>
-                        <input class="w3-input w3-border w3-light-grey" name="tipo" type="hidden" value="Pneu" required></p>                            
-                        </p>
+                        
                         
 						<input type="submit" value="Cadastrar" class="w3-btn w3-green" >
 						<input type="button" value="Cancelar" class="w3-btn w3-red" onclick="window.location.href='.'"></p>

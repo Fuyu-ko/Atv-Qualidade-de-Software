@@ -45,7 +45,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
         }     
     </style>
 </head>
-<body onload="w3_show_nav('menuNC')">
+<body onload="w3_show_nav('menuA')">
 <!-- Inclui MENU.PHP  -->
 <?php require 'menu.php'; ?>
 
