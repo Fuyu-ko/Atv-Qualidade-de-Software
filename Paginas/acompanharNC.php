@@ -171,7 +171,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
             ?>
             <p>
                 <input type="button" value="Adicionar Não Conformidade" class="w3-btn w3-blue" 
-                onclick="window.location.href='../Paginas/adicionarNC.php?id=<?php echo $id; ?>'"></p>
+                onclick="window.location.href='adicionarNC.php'"></p>
         </div>
     </div>
 

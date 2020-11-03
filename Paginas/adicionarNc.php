@@ -158,7 +158,8 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                         </p>
                         <p>
                         <input type="submit" value="Confirmar" class="w3-btn w3-green" >
-                        <input type="button" value="Cancelar" class="w3-btn w3-red" onclick="window.location.href='../index.php'"></p>
+                        <input type="button" value="Cancelar" class="w3-btn w3-red" 
+                        onclick="window.location.href='acompanharNC.php'"></p>
                     </form>
                 </div>
 
