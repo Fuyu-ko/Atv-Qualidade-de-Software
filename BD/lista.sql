@@ -68,24 +68,35 @@ create table auditoria(
 
 # Placeholder > Apagar dps q tiver uma forma de adicionar
 insert into auditoria(idAuditoria, titulo, descricaoAvaliacao, auditor) values
-(1, "Avaliacao de Qualidade do Trello", "Esse texto está sendo usado apenas para testes", "Maria Teste 1");
+(1, "Avaliacao de Qualidade do Trello", "Esse texto está sendo usado apenas para testes", "Maria Teste 1"),
+(2, "Avaliacao de Qualidade do Trello 2", "Esse texto tbm está sendo usado apenas para testes", "Maria Teste 2");
 
 create table checkList(
-	idAvaliacao int not null,
+	idAvaliacao int not null, # id do checklist
     idAuditoriaC int not null,
- #   nomeCheck text not null, # O checklist precisa de um nome > É oq vamos mostrar no título quando a pessoa for selecionar o checklist
+    nomeCheck longtext not null, # O checklist precisa de um nome > É oq vamos mostrar no título quando a pessoa for selecionar o checklist
  # ~Ana é pra isso q serve a FK idAuditoria, pra conecta com a respectiva auditoria q ja tem descrição
-	pergunta longtext not null,
-	checkagem enum("Sim", "Não", "Não aplicável") not null,
-	item text not null,
-	obs longtext,
     primary key(idAvaliacao),
     foreign key(idAuditoriaC) references auditoria(idAuditoria)
 ) engine=InnoDB default charset=utf8;
 
+create table itemCheck(
+	idItem int not null auto_increment,
+	pergunta longtext not null,
+	checkagem enum("Sim", "Não", "Não aplicável") not null, # Conferir se o a pergunta foi saciada
+	item text not null, # O que está sendo avaliado
+	obs longtext,
+    idCheck int not null,
+    primary key(idItem),
+    foreign key(idCheck) references checkList(idAvaliacao)
+) engine=InnoDB default charset=utf8;
+
 # Placeholder > Apagar dps q tiver uma forma de adicionar
 insert into checkList values
-(1, 1, "Inserir pergunta aqui", "Não", "Trello", "Nao ha");
+(1, 1,  "Insira um nome pro checklist");
+
+insert into itemCheck values
+(1, "Inserir pergunta aqui", "Não", "Trello", "Nao ha", 1);
 
 create table nConformidades (
 	idNC int not null auto_increment,
@@ -96,7 +107,7 @@ create table nConformidades (
     NcEncontradas longtext not null,
     acaoCorretiva longtext not null,
 	prazo date not null,
-	responsavel text not null, # Esse é o mesmo responsável pela auditoria? > ~Ana  Não, este é o responsável pela correção
+	responsavel text not null, 
 	dEnvio date,
 	dReavaliacao date,
 	escalonado text,

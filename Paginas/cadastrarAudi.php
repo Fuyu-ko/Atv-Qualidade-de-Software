@@ -72,8 +72,6 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                         <label class="w3-text-deep-purple"><b>Data</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="data" type="text" title="Data da Auditoria." required></p>
                         <p>
-                        
-                        
 						<input type="submit" value="Cadastrar" class="w3-btn w3-green" >
 						<input type="button" value="Cancelar" class="w3-btn w3-red" onclick="window.location.href='.'"></p>
 					</form>

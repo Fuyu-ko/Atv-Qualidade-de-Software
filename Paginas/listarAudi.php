@@ -8,7 +8,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 
 <html>
 <head>
-    <title>Histórivo de Auditorias</title>
+    <title>Histórico de Auditorias</title>
     <link rel="icon" type="image/png" href="../imagens/logoIcone.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -109,12 +109,6 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                 echo "    <th width='10%'> </th>";
                 echo "  </tr>";
 
-
-                echo '<form method="POST" action="estoqueListarPneuPesquisa.php">
-                <input type="text" name="pesquisar" style="width:90%" placeholder="Digite o Nome ou Marca do carro que deseja pesquisar">
-                    <input style="width:10%" type="submit" name="buscar" value="Buscar">
-                </form>';
-
                 if (mysqli_num_rows($result) > 0) {
 
                         // Apresenta cada linha da tabela
@@ -133,7 +127,9 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                         
                 ?>
                         <a href='estoqueListarPneuIndica.php?id=<?php echo $cod; ?>'><img src='../imagens/cl.png' title='CheckList da Avaliação' width='45'></a>
+                        </td><td>
                         <a href='estoqueListarPneuIndica.php?id=<?php echo $cod; ?>'><img src='../imagens/nc1.png' title='Acompanhar Não Conformidades' width='45'></a>
+                        </td>
                  <?php
                     }
                 }

@@ -8,7 +8,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 <html>
 	<head>
 
-	  <title>SEA+</title>
+	  <title>Adicionar NC</title>
 	  <link rel="icon" type="image/png" href="../imagens/Logo.ico"/>
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -18,17 +18,12 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 		.myMenu {margin-bottom:150px}
       </style>
 	</head>
-<body>
+<body onload="w3_show_nav('menuEstoque')">
 
-<!-- onload="w3_show_nav('menuEstoque')"
-    Isso era para estar dentor do body, but não temos um menu
-
-Inclui MENU.PHP > Não temos um Menu, vamos fazer?
-<?php //require 'menu.php';?>
--->
+<?php require 'menu.php';?>
 
 <!-- Conteúdo Principal: deslocado para direita em 270 pixels quando a sidebar é visível -->
-<div class="w3-main w3-container" style="margin: center;">
+<div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
 <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
   <h1 class="w3-xxlarge">xxx</h1>
@@ -102,17 +97,16 @@ Inclui MENU.PHP > Não temos um Menu, vamos fazer?
   </div>
 </div>
 
-<!--
 <footer class="w3-panel w3-padding-32 w3-card-4 w3-light-grey w3-center w3-opacity">
   <p><nav>
       <a class="w3-button w3-theme w3-hover-blue" onclick="document.getElementById('id01').style.display='block'" >Sobre</a>
   </nav></p>
 </footer>
 
-FIM DIV PRINCIPAL -->
+<!-- FIM DIV PRINCIPAL -->
 </div>
-<!-- Inclui RODAPE.PHP
-<?php //require 'rodape.php';?>
--->
+<!-- Inclui RODAPE.PHP -->
+<?php require 'rodape.php';?>
+
 </body>
 </html>

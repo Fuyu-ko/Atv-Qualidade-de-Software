@@ -141,7 +141,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                         ?>
                         </p>
                         <p>
-                        <label class="w3-text-deep-purple"><b>Informações do Checlist</b></label>
+                        <label class="w3-text-deep-purple"><b>Informações do Checklist</b></label>
                         <br>
                         <?php
                             $sql = "SELECT * FROM checkList";
