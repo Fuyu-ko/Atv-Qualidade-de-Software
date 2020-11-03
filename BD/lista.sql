@@ -12,7 +12,7 @@ SET @@global.time_zone = '+3:00';
 
 SET @@global.time_zone = '+3:00';
 
-#auditoriaDROP database lista;
+#DROP database lista;
 create schema if not exists lista;
 USE lista;
 
@@ -103,6 +103,7 @@ create table nConformidades (
     idAvaliacaoNc int not null,
     idAuditoriaNc int not null,
 	artefato text not null,
+    itemAvaliado longtext not null,
 	classNC text not null,
     NcEncontradas longtext not null,
     acaoCorretiva longtext not null,
@@ -147,4 +148,4 @@ insert into classificacao(class, tempo) values
 
 # select*from auditoria;
 # select*from nConformidades;
-select*from itemCheck;
+#select*from itemCheck;
