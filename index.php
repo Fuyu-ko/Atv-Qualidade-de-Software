@@ -1,14 +1,14 @@
 <!-------------------------------------------------------------------------------
-PROJETO DE EXPERIÊNCIA CRIATIVA 02:
-SEA+
+PROJETO QUALIDADE DE SOFTWARE:
 PUCPR
 ENGENHARIA DE SOFTWARE
-Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
+
+Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 ---------------------------------------------------------------------------------->
 
 <html>
 <head>
-   <title>SEA+</title>
+   <title>Quality Map</title>
     <link rel="icon" type="image/png" href="../imagens/Logo.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -63,21 +63,21 @@ Equipe: Ana Schran, Gabriel Barboza, Lohan Akim e Victor Negrelli
                     <label class="w3-text-deep-purple"><b>Adicionar Auditoria</b></label> <br>
                 </td>
                 <td style="width:30%; text-align:center">
-                    <label class="w3-text-deep-purple"><b>Historico de Auditorias</b></label>
+                    <label class="w3-text-deep-purple"><b>Histórico de Auditorias</b></label>
                 </td>
                 <td style="width:30%; text-align:center">
-                    <label class="w3-text-deep-purple"><b>Acompanhamento de NC</b></label>
+                    <label class="w3-text-deep-purple"><b>Acompanhamento de Não Conformidades</b></label>
                 </td>
             </tr>
             <tr>
                 <td style="width:30%; text-align:center">
-                   <a href="Paginas/cadastrarAudi.php" ><img src="../imagens/nc1.png" class="w3-circle"  width="45%" height="5%"></a>
+                   <a href="Paginas/cadastrarAudi.php" ><img src="Imagens/adicionaAuditoria.png" class="w3-circle"  width="45%" height="55%"></a>
                 </td>
                 <td style="width:30%; text-align:center">
-                   <a href="Paginas/listarAudi.php"><img src="../imagens/nc1.png" class="w3-circle"  width="45%" height="12%"></a>
+                   <a href="Paginas/listarAudi.php"><img src="Imagens/Auditoria.png" class="w3-circle"  width="45%" height="55%"></a>
                 </td>
                 <td style="width:30%; text-align:center">
-                   <a href="Paginas/acompanharNC.php"><img src="imagens/nc1.png"  class="w3-circle"  width="45%" height="55%"></a>
+                   <a href="Paginas/acompanharNC.php"><img src="Imagens/nConformidades.png"  class="w3-circle"  width="45%" height="55%"></a>
                 </td>
             </tr>
         </table>
