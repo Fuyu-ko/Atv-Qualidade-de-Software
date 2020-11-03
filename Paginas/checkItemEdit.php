@@ -54,7 +54,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
     <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-        <h1 class="w3-xxlarge">Adicionar Item de Checklist</h1>
+        <h1 class="w3-xxlarge">Editar Item de Checklist</h1>
 
         <p class="w3-large">
         <p>
@@ -112,6 +112,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                                 </div>
                                 <form class="w3-container" action="checkItemEditBD.php" method="post" onsubmit="return check(this.form)">
                                     <input type="hidden" id="acaoForm" name="acaoForm" value="Cada">
+                                    <input type="hidden" id="Id" name="id" value="<?php echo $row['idItem']; ?>">
                                     <p>
                                     <label class="w3-text-deep-purple"><b>Pergunta</b></label>
                                     <input class="w3-input w3-border w3-light-grey" name="pergunta" type="text" 

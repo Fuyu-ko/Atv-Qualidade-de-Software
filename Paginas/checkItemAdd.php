@@ -101,7 +101,6 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                     </div>
                     <form class="w3-container" action="checkItemAddBD.php" method="post" onsubmit="return check(this.form)">
                         <input type="hidden" id="acaoForm" name="acaoForm" value="Cada">
-                        <input type="hidden" id="Id" name="Id" value="<?php echo $row['id']; ?>">
                         <p>
                         <label class="w3-text-deep-purple"><b>Pergunta</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="pergunta" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Indique qual foi a NC encontrada." required></p>

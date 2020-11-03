@@ -118,9 +118,6 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                         <label class="w3-text-deep-purple"><b>Classificação da NC</b></label>
                         <br>
                         <?php
-                        // Por algum motivo quando só tem 1 auditoria, isso não funciona
-                        // Se criar outra e apagar funciona
-                        // Não sei se é só para mim que isso acontece
                             $sql = "SELECT * FROM classificacao";
                             echo "<select class='w3-input w3-border w3-light-grey' name='class' style='width:40%; height:4.5%; padding:0%; padding-left:8px' title='Selecione a Classificação da NC.'>";
                             if ($result = mysqli_query($conn, $sql)) {
