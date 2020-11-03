@@ -36,6 +36,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 			<a class="w3-bar-item w3-button" href="cadastrarAudi.php">Adicionar Auditoria</a>
 			<a class="w3-bar-item w3-button" href="listarAudi.php">Histórico de Auditorias</a>
 			<a class="w3-bar-item w3-button" href='adicionarNC.php'>Adicionar Não Conformidade</a>
+			<a class="w3-bar-item w3-button" href='acompanharNC.php'>Acompanhar Não Conformidades</a>
 			<a class="w3-bar-item w3-button" href="check.php">CheckLists</a>
 		</div>
 	</div>
