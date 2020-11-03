@@ -10,13 +10,9 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 	<div class="w3-top">
 		<div class="w3-row w3-blue w3-padding">
 			<div class="w3-half" style="margin:4px 0 3px 0">
-				<a href="."><img src='..\Imagens/logo.png' alt='QualityMap' width="120px" height="50px"></a>
+				<a href="../index.php"><img src='..\Imagens/logo.png' alt='QualityMap' width="120px" height="50px"></a>
 			</div>
-			<div class="w3-half w3-margin-top w3-wide w3-hide-medium w3-hide-small">
-				<div class="w3-right"><a href="../entrar.php">
-					<img src="../Imagens/home.png" width="30" height="25" href="../entrar.php">
-				</div>
-			</div>
+			
 		</div>
 		<div class="w3-bar w3-light-grey w3-large" style="z-index:4;">
 			<a class="w3-bar-item w3-button w3-left w3-hide-large w3-hover-blue w3-large w3-light-grey w3-padding-16" 
@@ -38,4 +34,5 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 			<a class="w3-bar-item w3-button" href='acompanharNC.php'>Acompanhar Não Conformidades</a>
 			<a class="w3-bar-item w3-button" href="check.php">CheckLists</a>
 		</div>
+
 	</div>
