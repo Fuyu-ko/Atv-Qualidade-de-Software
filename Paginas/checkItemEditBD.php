@@ -8,7 +8,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 <html>
 	<head>
 
-	  <title>Adicionar Item de Checklist</title>
+	  <title>Adicionar NC</title>
 	  <link rel="icon" type="image/png" href="../imagens/Logo.ico"/>
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -26,7 +26,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
 <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-  <h1 class="w3-xxlarge">Adicionar Item de Checklist</h1>
+  <h1 class="w3-xxlarge">xxx</h1>
 
   <p class="w3-large">
   <div class="w3-code cssHigh notranslate">
@@ -48,12 +48,11 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 		$username = "root";
 		$password = "";
 		$database = "lista";
-
+				
 		$perg		= $_POST['pergunta'];
 		$check	 	= $_POST['check'];
 		$item		= $_POST['item'];
 		$obs	 	= $_POST['obs'];
-		$id 		= $_POST['id'];
 
 		// Cria conexão
 		$conn = mysqli_connect($servername, $username, $password, $database);
@@ -73,11 +72,11 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 			mysqli_query($conn,'SET character_set_results=utf8');
 
 		// Faz Insert na Base de Dados
-		$sql = "INSERT INTO itemCheck 
-		VALUES (DEFAULT, '$perg', '$check', '$item', '$obs', '$id')";
+		$sql = "INSERT INTO nConformidades (idNC, NcEncontradas, acaoCorretiva, responsavel, classNC, prazo, idAvaliacaoNc, idAuditoriaNc) 
+		VALUES (DEFAULT, '$nc', '$ac', '$re', '$clasificacao', '$novaData', '$ic', '$sa')";
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = mysqli_query($conn, $sql)) {
-			echo "Item Adicionado!";
+			echo "NC Cadastrada!";
 		} else {
 			echo "Erro executando INSERT: " . mysqli_error($conn);
 		}

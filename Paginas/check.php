@@ -95,30 +95,35 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
             mysqli_query($conn,'SET character_set_results=utf8');
 
             // Faz Select na Base de Dados
-            $sql = "SELECT * FROM checklist";
+            $sql = "SELECT * FROM checklist JOIN auditoria WHERE idAuditoriaC = idAuditoria";
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
                 //NÃO CONSIGO CENTRALIZAR ISSO
                 echo "<table class='w3-table-all'>";
                 echo "  <tr>";
                 echo "    <th width='10%'>Id</th>";
-                echo "    <th width='80%'>Nome do CheckList</th>";
+                echo "    <th width='40%'>Nome do CheckList</th>";
+                echo "    <th width='40%'>Auditoria</th>";
                 echo "    <th width='10%'>Acessar</th>";
                 echo "  </tr>";
 
                 if (mysqli_num_rows($result) > 0) {
-
+                    $idFalso = 1;
                         // Apresenta cada linha da tabela
                         while ($row = mysqli_fetch_assoc($result)) {
                             $cod = $row["idAvaliacao"];
                             echo "<tr>";
                             echo "<td>";
-                            echo $cod;
+                            echo $idFalso;
                             echo "</td><td>";
                             echo $row["nomeCheck"];
                             echo "</td><td>";
+                            echo $row["titulo"];
+                            echo "</td><td>";
+
+                            $idFalso = $idFalso + 1;
                 ?>
-                            <a href='checkItem.php?id=<?php echo $cod; ?>'><img src='../Imagens/checklist.png' title='Acessar perguntas do CheckList' width='32'></a>
+                            <a href='checkItem.php?id=<?php echo $cod; ?>'><img src='../Imagens/Selecionar.png' title='Acessar perguntas do CheckList' width='32'></a>
                             </td>
 
                  <?php

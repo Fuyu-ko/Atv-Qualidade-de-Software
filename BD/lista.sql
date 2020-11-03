@@ -72,7 +72,7 @@ insert into auditoria(idAuditoria, titulo, descricaoAvaliacao, auditor) values
 (2, "Avaliacao de Qualidade do Trello 2", "Esse texto tbm está sendo usado apenas para testes", "Maria Teste 2");
 
 create table checkList(
-	idAvaliacao int not null, # id do checklist
+	idAvaliacao int not null auto_increment, # id do checklist
     idAuditoriaC int not null,
     nomeCheck longtext not null, # O checklist precisa de um nome > É oq vamos mostrar no título quando a pessoa for selecionar o checklist
  # ~Ana é pra isso q serve a FK idAuditoria, pra conecta com a respectiva auditoria q ja tem descrição
@@ -147,3 +147,4 @@ insert into classificacao(class, tempo) values
 
 # select*from auditoria;
 # select*from nConformidades;
+select*from itemCheck;

@@ -76,6 +76,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                 $username = "root";
                 $password = "";
                 $database = "lista";
+                $id=$_GET['id'];
                 
                 // Cria conexão
                 $conn = mysqli_connect($servername, $username, $password, $database);
@@ -98,16 +99,12 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                     <div class="w3-container w3-theme">
                         <h2>Informe a Pergunta</h2>
                     </div>
-                    <form class="w3-container" action="adicionarNcBD.php" method="post" onsubmit="return check(this.form)">
+                    <form class="w3-container" action="checkItemAddBD.php" method="post" onsubmit="return check(this.form)">
                         <input type="hidden" id="acaoForm" name="acaoForm" value="Cada">
-                        <!--Dá para fazer o ID ser automático
-                            Auto Increment não é uma boa ideia pois o id faz o increment com base no anterior
-                            Talvez tentar criar IDs numéricos aleatórios seja melhor
-                            Por enquanto, para testes, está o auto_increment
-                        -->
+                        <input type="hidden" id="Id" name="Id" value="<?php echo $row['id']; ?>">
                         <p>
                         <label class="w3-text-deep-purple"><b>Pergunta</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="nc" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Indique qual foi a NC encontrada." required></p>
+                        <input class="w3-input w3-border w3-light-grey" name="pergunta" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Indique qual foi a NC encontrada." required></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Check</b></label><br>
                         <input type="radio" id="Sim" name="check" value="Sim">
@@ -119,11 +116,33 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                         </p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Item</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="resp" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Indique o responsável por essa NC." required></p>
+                        <input class="w3-input w3-border w3-light-grey" name="item" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Indique o responsável por essa NC." required></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Observações</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="resp" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Indique o responsável por essa NC."></p>
+                        <input class="w3-input w3-border w3-light-grey" name="obs" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Indique o responsável por essa NC."></p>
                         <p>
+                        <label class="w3-text-deep-purple"><b>Salvando no Checlist</b></label>
+                        <br>
+                        <?php
+                            $sql = "SELECT * FROM checkList WHERE idAvaliacao = $id";
+                            echo "<select class='w3-input w3-border w3-light-grey' name='id' style='width:40%; height:4.5%; padding:0%; padding-left:8px' title='Checklist em que será salvo.'>";
+                            if ($result = mysqli_query($conn, $sql)) {
+                                if (mysqli_num_rows($result) > 0) {
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        echo "";
+                                        echo "<option value=";
+                                        echo $row["idAvaliacao"];
+                                        echo ">";
+                                        echo $row['nomeCheck'];
+                                        echo "</option>";
+                                        }
+                                    }
+                                }
+                            echo "</select>";
+                        ?>
+                        </p>
+                        <p>
+                        <input type="submit" value="Registrar" class="w3-btn w3-green" >
                         <input type="button" value="Cancelar" class="w3-btn w3-red" 
                         onclick="window.location.href='check.php'">
                         </p>

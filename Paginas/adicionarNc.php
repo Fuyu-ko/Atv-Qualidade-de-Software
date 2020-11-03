@@ -182,9 +182,9 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                                 }
                             echo "</select>";
                         ?>
-                        </p>                        
+                        </p>
                         <p>
-                        <input type="submit" value="Registrar" class="w3-btn w3-green" >
+                        <input type="submit" value="Confirmar" class="w3-btn w3-green" >
                         <input type="button" value="Cancelar" class="w3-btn w3-red" onclick="window.location.href='../index.php'"></p>
                     </form>
                 </div>

@@ -149,7 +149,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
             ?>
             <p>
                 <input type="button" value="Adicionar Pergunta" class="w3-btn w3-blue" 
-                onclick="window.location.href='../Paginas/checkItemAdd.php'"></p>
+                onclick="window.location.href='../Paginas/checkItemAdd.php?id=<?php echo $id; ?>'"></p>
         </div>
     </div>
 
