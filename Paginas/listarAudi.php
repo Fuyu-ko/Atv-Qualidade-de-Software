@@ -25,25 +25,6 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
         .myMenu {
             margin-bottom: 150px
         }
-        input[type=submit]{
-            background-color: royalblue;
-            border-style: 0.1px solid;
-            border-color: royalblue;
-            color: white;
-            padding-top: 2.7px;
-            padding-bottom: 2.7px;
-        }
-        input[type=submit]:hover{
-            background-color: lightblue;
-            border-color: lightblue;
-            cursor: pointer;
-        }
-        input[type=text]{
-            border-style: 0.1px solid;
-            border-color: royalblue;
-            padding: 3px;
-            padding-left: 2%;
-        }     
     </style>
 </head>
 <body onload="w3_show_nav('menuEstoque')">
@@ -95,14 +76,15 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
             mysqli_query($conn,'SET character_set_results=utf8');
 
             // Faz Select na Base de Dados
-            $sql = "SELECT idAuditoria, DescricaoAvaliacao, auditor, dataAuditoria FROM auditoria";
+            $sql = "SELECT * FROM auditoria";
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
                 //NÃO CONSIGO CENTRALIZAR ISSO
                 echo "<table class='w3-table-all'>";
                 echo "  <tr>";
                 echo "    <th width='10%'>Id</th>";
-                echo "    <th width='40%'>Descricao</th>";
+                echo "    <th width='15%'>Título</th>";
+                echo "    <th width='25%'>Descricao</th>";
                 echo "    <th width='10%'>Auditor</th>";
                 echo "    <th width='10%'>Data</th>";
                 echo "    <th width='10%'> </th>";
@@ -110,20 +92,24 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                 echo "  </tr>";
 
                 if (mysqli_num_rows($result) > 0) {
-
+                    $idFalso = 1;
                         // Apresenta cada linha da tabela
                         while ($row = mysqli_fetch_assoc($result)) {
                             $cod = $row["idAuditoria"];
                             echo "<tr>";
                             echo "<td>";
-                            echo $cod;
+                            echo $idFalso;
                             echo "</td><td>";
-                            echo $row["DescricaoAvaliacao"];
+                            echo $row["titulo"];
+                            echo "</td><td>";
+                            echo $row["descricaoAvaliacao"];
                             echo "</td><td>";
                             echo $row["auditor"];
                             echo "</td><td>";
                             echo $row["dataAuditoria"];
                             echo "</td><td>";
+
+                            $idFalso = $idFalso + 1;
                         
                 ?>
                         <a href='estoqueListarPneuIndica.php?id=<?php echo $cod; ?>'><img src='../imagens/cl.png' title='CheckList da Avaliação' width='45'></a>

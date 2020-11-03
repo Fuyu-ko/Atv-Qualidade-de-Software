@@ -76,7 +76,6 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
             $username = "root";
             $password = "";
             $database = "lista";
-            $id = $_GET["id"];
             
             // Verifica conexão
             $conn = mysqli_connect($servername, $username, $password, $database);
@@ -96,7 +95,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
             mysqli_query($conn,'SET character_set_results=utf8');
 
             // Faz Select na Base de Dados
-            $sql = "SELECT * FROM nConformidades WHERE idNC = $id";
+            $sql = "SELECT * FROM nConformidades";
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
                 echo "<table class='w3-table-all'>";

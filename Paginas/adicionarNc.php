@@ -24,25 +24,6 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
         .myMenu {
             margin-bottom: 150px
         }
-        input[type=submit]{
-            background-color: royalblue;
-            border-style: 0.1px solid;
-            border-color: royalblue;
-            color: white;
-            padding-top: 2.7px;
-            padding-bottom: 2.7px;
-        }
-        input[type=submit]:hover{
-            background-color: lightblue;
-            border-color: lightblue;
-            cursor: pointer;
-        }
-        input[type=text]{
-            border-style: 0.1px solid;
-            border-color: royalblue;
-            padding: 3px;
-            padding-left: 2%;
-        }     
     </style>
 </head>
 <body onload="w3_show_nav('menuA')">
@@ -100,11 +81,6 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                     </div>
                     <form class="w3-container" action="adicionarNcBD.php" method="post" onsubmit="return check(this.form)">
                         <input type="hidden" id="acaoForm" name="acaoForm" value="Cada">
-                        <!--Dá para fazer o ID ser automático
-                            Auto Increment não é uma boa ideia pois o id faz o increment com base no anterior
-                            Talvez tentar criar IDs numéricos aleatórios seja melhor
-                            Por enquanto, para testes, está o auto_increment
-                        -->
                         <p>
                         <label class="w3-text-deep-purple"><b>Não conformidade</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="nc" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Indique qual foi a NC encontrada." required></p>

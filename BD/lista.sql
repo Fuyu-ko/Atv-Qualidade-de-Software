@@ -58,7 +58,7 @@ create table nConformidades (
 */
 
 create table auditoria(
-	idAuditoria int not null,
+	idAuditoria int not null auto_increment,
 	titulo longtext not null, # Precisa de um título ou algo q facilite a identificação além do id, tbm ajuda nas outras 2 tabelas
 	descricaoAvaliacao longtext not null,
 	auditor longtext not null,

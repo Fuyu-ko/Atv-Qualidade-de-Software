@@ -49,7 +49,6 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 		$password = "";
 		$database = "lista";
 				
-		$id			= $_POST['id'];
 		$tit 		= $_POST['titulo'];
 		$desc 		= $_POST['descricao'];
 		$aud 		= $_POST['auditor'];
@@ -74,7 +73,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 		
 		// Faz Insert na Base de Dados
 		$sql = "INSERT INTO auditoria (idAuditoria, titulo, descricaoAvaliacao, auditor, dataAuditoria) 
-		VALUES (DEFAULT, '$id', '$tit', '$desc', '$aud', '$dt')";
+		VALUES (DEFAULT, '$tit', '$desc', '$aud', '$dt')";
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = mysqli_query($conn, $sql)) {
 			echo "Auditoria Cadastrada!";
