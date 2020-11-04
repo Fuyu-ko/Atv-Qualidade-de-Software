@@ -1,50 +1,3 @@
-> O que deve ter nas não conformidades:
-- Arquivo de auditoria
-- ID da Não Conformidade
-- Item avaliado
-- Classificação da NC
-- Não Confirmidade Encontrada
-- Ação corretiva 
-- Prazo de correção
-- Responsável pela correção
-- Data de envio do comunicado
-- Data de reavaliação
-- Escalonado
-- Novo Prazo
-- Data de Resolução
-- Observações
-
--- Add > Meio ok
--- Editar > Falta fazer isso
--- Excluir > ?
-
-> O que deve ter no checklist
-- ID
-- Artefato
-- Item avaliado (funcionalidade/recurso)
-- Pergunta
-- Check (sim/não/não aplicável)
-- Não Conformidades Encontradas
-- Ação Corretiva Indicada
-- Observações
-
--- Add checklist > Ok
--- Editar checklist > ?
--- Excluir > ?
--- Add item no checklist > Ok
--- Editar item no checklist> Ok
--- Excluir item no checklist > ?
-
-> O que deve ter na auditoria
-- Descrição da Avaliação:
-- Auditor(a) de QA:
-- Data de auditoria:
-- Tempo total de auditoria:
-
--- Add > Ok
--- Editar > ?
--- Excluir > ?
-
 > Níveis de aderêrencia definidos
 0 - 40%
 41 - 60%
@@ -63,6 +16,12 @@ Alta-Complexa ... 3 dias
 Urgente-Simples ... 1 dia
 Urgente-Complexa ... 2 dias
 
->> pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$"
-- Tirado do código
-- Queria indicar o limite, mas vejo isso dps
+
+>ARTEFATOS AVALIADOS:
+
+Kanbam -> https://trello.com/b/AAe2xqso/kanbam
+Trello -> https://trello.com/b/yZn5VFoN/design-system-checklist
+
+>PROCESSO UTILIZADO:
+
+GPR

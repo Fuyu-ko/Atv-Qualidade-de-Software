@@ -8,7 +8,8 @@ INSERT INTO `lista`.`auditoria` (`idAuditoria`, `titulo`, `descricaoAvaliacao`, 
 INSERT INTO `lista`.`checklist` (`idAvaliacao`, `idAuditoriaC`, `nomeCheck`, `artefato`) VALUES ('1', '1', 'Avaliação de QA: KanBam - Sea+', 'KanBam - Sea+');
 INSERT INTO `lista`.`checklist` (`idAvaliacao`, `idAuditoriaC`, `nomeCheck`, `artefato`) VALUES ('2', '2', 'Avaliação de QA: Trello - Zoho Desk', 'Trello - Zoho Desk');
 
-#ITEM DE CHECKLIST2
+#ITEM DE CHECKLIST
+
 INSERT INTO `lista`.`itemcheck` (`idItem`, `pergunta`, `checkagem`, `item`, `obs`, `idCheck`) VALUES ('8', 'Os dados relevantes para a confecção do projeto são especificados e apresentados no artefato?', 'Sim', 'Dados do Projeto', 'Não há', '2');
 INSERT INTO `lista`.`itemcheck` (`idItem`, `pergunta`, `checkagem`, `item`, `obs`, `idCheck`) VALUES ('9', 'A documentação apresenta a explicação descritiva de seus itens (ex.: atividades e gráficos)?', 'Sim', 'Documentação', 'Não há', '2');
 INSERT INTO `lista`.`itemcheck` (`idItem`, `pergunta`, `checkagem`, `item`, `obs`, `idCheck`) VALUES ('10', 'A documentação apresenta explicações através de gráficos, tabelas ou demais ilustrações?', 'Sim', 'Documentação', 'Não há', '2');
@@ -20,6 +21,16 @@ INSERT INTO `lista`.`itemcheck` (`idItem`, `pergunta`, `checkagem`, `item`, `obs
 INSERT INTO `lista`.`itemcheck` (`idItem`, `pergunta`, `checkagem`, `item`, `obs`, `idCheck`) VALUES ('16', 'O artefato apresenta um mecanismo de inserção das metas e prazos? ', 'Sim', 'Metas e Prazos', 'Não há', '2');
 INSERT INTO `lista`.`itemcheck` (`idItem`, `pergunta`, `checkagem`, `item`, `obs`, `idCheck`) VALUES ('17', 'Há um critério padrão para a execução das atividades sendo apresentado no artefato?', 'Não', 'Organização', 'Não há', '2');
 INSERT INTO `lista`.`itemcheck` (`idItem`, `pergunta`, `checkagem`, `item`, `obs`, `idCheck`) VALUES ('18', 'A distribuição do conteúdo presente no artefato é apresentada?', 'Não', 'Distribuição', 'Não há', '2');
+UPDATE `lista`.`itemcheck` SET `NcEncontrada` = 'Não apresenta as fontes utilizadas para a coleta dos dados' WHERE (`idItem` = '12');
+UPDATE `lista`.`itemcheck` SET `NcEncontrada` = 'Não possui um padrão de execução para as tarefas' WHERE (`idItem` = '17');
+UPDATE `lista`.`itemcheck` SET `NcEncontrada` = 'Não apresenta a estratégia de distribuição do conteúdo do artefato utilizado' WHERE (`idItem` = '18');
+INSERT INTO `lista`.`itemcheck` (`idItem`, `pergunta`, `checkagem`, `item`, `NcEncontrada`, `obs`, `idCheck`) VALUES ('1', 'O artefato possui todas as divisões de etapas (\'a fazer\', \'em andamento\' e \'feito\')?', 'Sim', 'Estrutura', 'Não há', 'Não há', '1');
+INSERT INTO `lista`.`itemcheck` (`idItem`, `pergunta`, `checkagem`, `item`, `NcEncontrada`, `obs`, `idCheck`) VALUES ('2', 'Foram identificadas e definidas as atividades do projeto?', 'Sim', 'Planejamento', 'Não há', 'Não há', '1');
+INSERT INTO `lista`.`itemcheck` (`idItem`, `pergunta`, `checkagem`, `item`, `NcEncontrada`, `obs`, `idCheck`) VALUES ('3', 'Há detalhamento das atividades inseridas?', 'Sim', 'Especificação', 'Não há', 'Não há', '1');
+INSERT INTO `lista`.`itemcheck` (`idItem`, `pergunta`, `checkagem`, `item`, `NcEncontrada`, `obs`, `idCheck`) VALUES ('4', 'O artefato contém a especificação da correspondência das atividades à determinada funcionalidade do sistema?', 'Sim', 'Especificação', 'Não há', 'Não há', '1');
+INSERT INTO `lista`.`itemcheck` (`idItem`, `pergunta`, `checkagem`, `item`, `NcEncontrada`, `obs`, `idCheck`) VALUES ('5', 'O artefato possui todas as terefas com responsáveis definidos?', 'Sim', 'Recursos Humanos', 'Não há', 'Não há', '1');
+INSERT INTO `lista`.`itemcheck` (`idItem`, `pergunta`, `checkagem`, `item`, `NcEncontrada`, `obs`, `idCheck`) VALUES ('6', 'O artefato apresenta as metas e prazos das respectivas atividades?', 'Sim', 'Metas e Prazos', 'Não há', 'Não há', '1');
+INSERT INTO `lista`.`itemcheck` (`idItem`, `pergunta`, `checkagem`, `item`, `NcEncontrada`, `obs`, `idCheck`) VALUES ('7', 'Há um responsável pelo acesso, atualização e mantimento do artefato definido?', 'Sim', 'Segurança', 'Não há', 'Não há', '1');
 
 #NC
 INSERT INTO `lista`.`nconformidades` (`idNC`, `idAvaliacaoNc`, `idAuditoriaNc`, `artefato`, `itemAvaliado`, `classNC`, `NcEncontradas`, `acaoCorretiva`, `prazo`, `responsavel`, `dEnvio`, `dReavaliacao`, `escalonado`) VALUES ('11', '2', '2', 'Trello - Zoho Desk', 'Documentação', 'Baixa-Complexa', ' Não possui priorização de tarefas', ' Indicar através de um sistema de etiquetas coloridas a respectiva complexidade (ex.: vermelha = urgente), adicionando também, uma legenda.', '2020-11-10', 'Gerente de Projetos', '2020-11-03', '2020-11-10', 'Não');
