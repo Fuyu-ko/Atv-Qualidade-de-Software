@@ -74,7 +74,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                         value="<?php echo $date ?>" required></p>
                         <p>
 						<input type="submit" value="Cadastrar" class="w3-btn w3-green" >
-						<input type="button" value="Cancelar" class="w3-btn w3-red" onclick="window.location.href='.'"></p>
+						<input type="button" value="Cancelar" class="w3-btn w3-red" onclick="window.location.href='../index.php'"></p>
 					</form>
 				</div>
 

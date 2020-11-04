@@ -90,10 +90,35 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
             $dataNA=mysqli_fetch_assoc($na);
 
             //calculo: 1-(nc/total-na)
-            $aderencia = 1 - ($dataN['n'] / ($dataT['t'] - $dataNA['na'])); 
-            $pAderencia = number_format((float)$aderencia, 2, '.', '')."%";
+            if(($dataT['t'] - $dataNA['na'])==0){
+                $aderencia = 100;
+            }else{
+            $aderencia = (1 - ($dataN['n'] / ($dataT['t'] - $dataNA['na'])))*100; 
+            }
+            $pAderencia = number_format((float)$aderencia, 2, '.', '');
 
-            echo "Porcentagem de Aderência: ".$pAderencia;
+            $color = "#000000";
+
+            if (($pAderencia > 90)){
+                $color = "#008000"; 
+            }else if (($pAderencia <= 90) && ($pAderencia > 80)){
+                $color = "#00008B"; 
+            }else if (($pAderencia <= 80) && ($pAderencia > 60)){
+                $color = "#8B4513"; 
+            }else if (($pAderencia <= 60) && ($pAderencia > 40)){
+                $color = "#8B0000"; 
+            }else if ($pAderencia <= 40){
+                $color = "#FF0000"; 
+            }
+
+
+            echo "Porcentagem de Aderência: ";
+            echo "<span style=color:";
+            echo $color;
+            echo ">";
+            echo $pAderencia;
+            echo "%";
+            echo "</span>";
 
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
@@ -101,11 +126,11 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                 echo "<table class='w3-table-all'>";
                 echo "  <tr>";
                 echo "    <th width='10%'>Id</th>";
-                echo "    <th width='15%'>Obj Avaliado</th>";
-                echo "    <th width='20%'>Pergunta</th>";
-                echo "    <th width='10%'>NC</th>";
+                echo "    <th width='10%'>Objeto Avaliado</th>";
+                echo "    <th width='15%'>Pergunta</th>";
                 echo "    <th width='10%'>Check</th>";
-                echo "    <th width='25%'>OBS</th>";
+                echo "    <th width='20%'>Não Conformidade Encontrada</th>";
+                echo "    <th width='25%'>Observação</th>";
                 echo "    <th width='10%'>Editar</th>";
                 echo "  </tr>";
 
@@ -123,9 +148,14 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                             echo "</td><td>";
                             echo $row["pergunta"];
                             echo "</td><td>";
-                            echo $row["NcEncontradas"];
-                            echo "</td><td>";
                             echo $row["checkagem"];
+                            echo "</td><td>";
+                            if($row["checkagem"]=='Não'){
+                                $itemR =  $row["NcEncontradas"];
+                            }else{
+                                $itemR = "";
+                            }
+                            echo $itemR;
                             echo "</td><td>";
                             echo $row["obs"];
                             echo "</td><td>";
