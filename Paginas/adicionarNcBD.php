@@ -9,7 +9,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 	<head>
 
 	  <title>Adicionar NC</title>
-	  <link rel="icon" type="image/png" href="../imagens/Logo.ico"/>
+	  <link rel="icon" type="image/png" href="../Imagens/IconeNovoAzul.ico"/>
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	  <style>
@@ -26,7 +26,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
 <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-  <h1 class="w3-xxlarge">xxx</h1>
+  <h1 class="w3-xxlarge">Adicionar NC</h1>
 
   <p class="w3-large">
   <div class="w3-code cssHigh notranslate">
@@ -55,10 +55,12 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 		$cl 	= $_POST['class'];
 		$ic 	= $_POST['iCheck'];
 		$sa 	= $_POST['sAuditoria'];
+		$em 	= $_POST['emissao'];
+		$pr 	= $_POST['prazo'];
 
-		$sep_dados 		= explode('|', $cl);
-		$clasificacao 	= $sep_dados[0];
-		$tempo			= $sep_dados[1];
+		$sep 	= explode("|", $ic);
+		$ik 	= $sep[0];
+		$at 	= $sep[1];
 
 		// Cria conexão
 		$conn = mysqli_connect($servername, $username, $password, $database);
@@ -77,13 +79,9 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 			mysqli_query($conn,'SET character_set_client=utf8');
 			mysqli_query($conn,'SET character_set_results=utf8');
 
-		//Isso não quer funcionar T^T
-		$data2 = date_create("Y-m-d");
-		$novaData = date_add($data2, date_interval_create_from_date_string($tempo." days"));
-
-		// Faz Insert na Base de Dados
-		$sql = "INSERT INTO nConformidades (idNC, NcEncontradas, acaoCorretiva, responsavel, classNC, prazo, idAvaliacaoNc, idAuditoriaNc) 
-		VALUES (DEFAULT, '$nc', '$ac', '$re', '$clasificacao', '$novaData', '$ic', '$sa')";
+			// Faz Insert na Base de Dados
+		$sql = "INSERT INTO nConformidades (idNC, NcEncontradas, acaoCorretiva, responsavel, classNC, prazo, idAvaliacaoNc, idAuditoriaNc, dEnvio, artefato) 
+		VALUES (DEFAULT, '$nc', '$ac', '$re', '$cl', '$pr', '$ik', '$sa', '$em', '$at')";
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = mysqli_query($conn, $sql)) {
 			echo "NC Cadastrada!";

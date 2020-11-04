@@ -8,7 +8,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 <html>
 <head>
     <title>Adicionar Checklist</title>
-    <link rel="icon" type="image/png" href="../imagens/logoIcone.ico"/>
+    <link rel="icon" type="image/png" href="../Imagens/IconeNovoAzul.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
@@ -85,6 +85,8 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                         <label class="w3-text-deep-purple"><b>Nome do Checklist</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="nCheck" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Dê um nome para o Checklist." required></p>
                         <p>
+                        <label class="w3-text-deep-purple"><b>Artefato avaliado</b></label>
+                        <input class="w3-input w3-border w3-light-grey" name="art" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Dê um nome para o Checklist." required></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Salvar na Auditoria</b></label>
                         <!--Salvar na auditoria está certo?-->

@@ -9,7 +9,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 <html>
 <head>
     <title>Histórico de Auditorias</title>
-    <link rel="icon" type="image/png" href="../imagens/logoIcone.ico"/>
+    <link rel="icon" type="image/png" href="../Imagens/IconeNovoAzul.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
@@ -82,13 +82,11 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                 //NÃO CONSIGO CENTRALIZAR ISSO
                 echo "<table class='w3-table-all'>";
                 echo "  <tr>";
-                echo "    <th width='10%'>Id</th>";
-                echo "    <th width='15%'>Título</th>";
-                echo "    <th width='25%'>Descricao</th>";
-                echo "    <th width='10%'>Auditor</th>";
-                echo "    <th width='10%'>Data</th>";
-                echo "    <th width='10%'> </th>";
-                echo "    <th width='10%'> </th>";
+                echo "    <th width='5%'>Id</th>";
+                echo "    <th width='20%'>Título</th>";
+                echo "    <th width='45%'>Descricao</th>";
+                echo "    <th width='15%'>Auditor</th>";
+                echo "    <th width='15%'>Data</th>";
                 echo "  </tr>";
 
                 if (mysqli_num_rows($result) > 0) {
@@ -107,15 +105,11 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                             echo $row["auditor"];
                             echo "</td><td>";
                             echo $row["dataAuditoria"];
-                            echo "</td><td>";
+                            echo "</td>";
 
                             $idFalso = $idFalso + 1;
                         
                 ?>
-                        <a href='estoqueListarPneuIndica.php?id=<?php echo $cod; ?>'><img src='../imagens/cl.png' title='CheckList da Avaliação' width='45'></a>
-                        </td><td>
-                        <a href='estoqueListarPneuIndica.php?id=<?php echo $cod; ?>'><img src='../imagens/nc1.png' title='Acompanhar Não Conformidades' width='45'></a>
-                        </td>
                  <?php
                     }
                 }
@@ -128,6 +122,11 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
             mysqli_close($conn);  //Encerra conexao com o BD
 
             ?>
+            <p>
+                <input type="button" value="Visualizar CheckLists" class="w3-btn w3-blue" 
+                onclick="window.location.href='check.php'">
+            </p>
+
         </div>
     </div>
 

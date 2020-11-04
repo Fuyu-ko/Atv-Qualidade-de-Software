@@ -8,7 +8,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 <html>
 <head>
     <title>Adicionar Auditoria</title>
-    <link rel="icon" type="image/png" href="../imagens/logoIcone.ico"/>
+    <link rel="icon" type="image/png" href="../Imagens/IconeNovoAzul.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>

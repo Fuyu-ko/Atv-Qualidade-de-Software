@@ -9,7 +9,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 <html>
 <head>
     <title>Editar Item de Checklist</title>
-    <link rel="icon" type="image/png" href="../imagens/logoIcone.ico"/>
+    <link rel="icon" type="image/png" href="../Imagens/IconeNovoAzul.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
@@ -102,7 +102,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                                     title="Indique a pergunta a ser respondida." required></p>
                                     <p>
                                     <label class="w3-text-deep-purple"><b>Check</b></label><br>
-                                    <?php $selecionado = $row['checkagem']?>
+                                    <?php $selecionado = $row['checkagem'];?>
                                     <input type="radio" id="Sim" name="check" value="Sim" 
                                     <?php echo $selecionado=='Sim'?'checked':'';?>>
                                     <label for="Sim">Sim</label><br>

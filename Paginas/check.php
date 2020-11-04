@@ -9,7 +9,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 <html>
 <head>
     <title>Checklists</title>
-    <link rel="icon" type="image/png" href="../imagens/logoIcone.ico"/>
+    <link rel="icon" type="image/png" href="../Imagens/IconeNovoAzul.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
@@ -83,8 +83,9 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                 echo "<table class='w3-table-all'>";
                 echo "  <tr>";
                 echo "    <th width='10%'>Id</th>";
-                echo "    <th width='40%'>Nome do CheckList</th>";
+                echo "    <th width='25%'>Nome do CheckList</th>";
                 echo "    <th width='40%'>Auditoria</th>";
+                echo "    <th width='15%'>Artefato</th>";
                 echo "    <th width='10%'>Acessar</th>";
                 echo "  </tr>";
 
@@ -100,6 +101,8 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                             echo $row["nomeCheck"];
                             echo "</td><td>";
                             echo $row["titulo"];
+                            echo "</td><td>";
+                            echo $row["artefato"];
                             echo "</td><td>";
 
                             $idFalso = $idFalso + 1;

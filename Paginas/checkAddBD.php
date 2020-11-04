@@ -9,7 +9,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 	<head>
 
 	  <title>Adicionar Checklist</title>
-	  <link rel="icon" type="image/png" href="../imagens/Logo.ico"/>
+	  <link rel="icon" type="image/png" href="../Imagens/IconeNovoAzul.ico"/>
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	  <style>
@@ -51,6 +51,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 				
 		$nome		= $_POST['nCheck'];
 		$auditoria	= $_POST['auditoria'];
+		$artefato 	= $_POST['art'];
 
 		// Cria conexão
 		$conn = mysqli_connect($servername, $username, $password, $database);
@@ -71,7 +72,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 
 		// Faz Insert na Base de Dados
 		$sql = "INSERT INTO checkList
-		VALUES (DEFAULT, '$auditoria', '$nome')";
+		VALUES (DEFAULT, '$auditoria', '$nome', '$artefato')";
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = mysqli_query($conn, $sql)) {
 			echo "Checklist Adicionada!";

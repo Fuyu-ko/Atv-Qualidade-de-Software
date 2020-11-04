@@ -75,7 +75,7 @@ create table checkList(
 	idAvaliacao int not null auto_increment, # id do checklist
     idAuditoriaC int not null,
     nomeCheck longtext not null, # O checklist precisa de um nome > É oq vamos mostrar no título quando a pessoa for selecionar o checklist
- # ~Ana é pra isso q serve a FK idAuditoria, pra conecta com a respectiva auditoria q ja tem descrição
+	artefato longtext not null,
     primary key(idAvaliacao),
     foreign key(idAuditoriaC) references auditoria(idAuditoria)
 ) engine=InnoDB default charset=utf8;
@@ -93,7 +93,7 @@ create table itemCheck(
 
 # Placeholder > Apagar dps q tiver uma forma de adicionar
 insert into checkList values
-(1, 1,  "Insira um nome pro checklist");
+(1, 1,  "Insira um nome pro checklist", "Trello");
 
 insert into itemCheck values
 (1, "Inserir pergunta aqui", "Não", "Trello", "Nao ha", 1);
@@ -109,9 +109,9 @@ create table nConformidades (
     acaoCorretiva longtext not null,
 	prazo date not null,
 	responsavel text not null, 
-	dEnvio date,
+	dEnvio date not null,
 	dReavaliacao date,
-	escalonado text,
+	escalonado enum("Não", "Sim") not null,
 	novoPrazo date,
 	dResolucao date,
     primary key(idNC),

@@ -14,6 +14,10 @@
 - Data de Resolução
 - Observações
 
+-- Add > Meio ok
+-- Editar > Falta fazer isso
+-- Excluir > ?
+
 > O que deve ter no checklist
 - ID
 - Artefato
@@ -24,11 +28,22 @@
 - Ação Corretiva Indicada
 - Observações
 
+-- Add checklist > Ok
+-- Editar checklist > ?
+-- Excluir > ?
+-- Add item no checklist > Ok
+-- Editar item no checklist> Ok
+-- Excluir item no checklist > ?
+
 > O que deve ter na auditoria
 - Descrição da Avaliação:
 - Auditor(a) de QA:
 - Data de auditoria:
 - Tempo total de auditoria:
+
+-- Add > Ok
+-- Editar > ?
+-- Excluir > ?
 
 > Níveis de aderêrencia definidos
 0 - 40%

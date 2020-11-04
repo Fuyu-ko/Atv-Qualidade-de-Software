@@ -8,7 +8,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 <html>
 	<head>
 
-	  <title>Editar Item de Checklist</title>
+	  <title>Editar NC</title>
 	  <link rel="icon" type="image/png" href="../Imagens/IconeNovoAzul.ico"/>
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -26,7 +26,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
 
 <div class="w3-panel w3-padding-large w3-card-4 w3-light-grey">
-  <h1 class="w3-xxlarge">Editar Item de Checklist</h1>
+  <h1 class="w3-xxlarge">Editar NC</h1>
 
   <p class="w3-large">
   <div class="w3-code cssHigh notranslate">
@@ -49,11 +49,14 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 		$password = "";
 		$database = "lista";
 				
-		$perg		= $_POST['pergunta'];
-		$check	 	= $_POST['check'];
-		$item		= $_POST['item'];
-		$obs	 	= $_POST['obs'];
-		$id 		= $_POST['id'];
+		$id 	= $_POST['id'];
+		$ac 	= $_POST['aCorretiva'];
+		$cl 	= $_POST['class'];
+		$np		= $_POST['nPrazo'];
+		$re 	= $_POST['reav'];
+		$ia 	= $_POST['itens'];
+		$es 	= $_POST['esc'];
+		$dr 	= $_POST['dRes'];
 
 		// Cria conexão
 		$conn = mysqli_connect($servername, $username, $password, $database);
@@ -72,12 +75,12 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 			mysqli_query($conn,'SET character_set_client=utf8');
 			mysqli_query($conn,'SET character_set_results=utf8');
 
-		// Faz Insert na Base de Dados
-		$sql = "UPDATE itemCheck 
-		SET pergunta='$perg', checkagem='$check', item='$item', obs='$obs' WHERE idItem = '$id'";
+			// Faz Insert na Base de Dados
+		$sql = "UPDATE nConformidades 
+			SET acaoCorretiva = '$ac', classNC = '$cl', novoPrazo = '$np', dReavaliacao = '$re', itemAvaliado = '$ia', escalonado = '$es', dResolucao = '$dr' WHERE idNC = '$id'";
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = mysqli_query($conn, $sql)) {
-			echo "Item Atualizado!";
+			echo "NC atualizada!";
 		} else {
 			echo "Erro executando INSERT: " . mysqli_error($conn);
 		}

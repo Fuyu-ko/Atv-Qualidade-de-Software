@@ -8,7 +8,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 <html>
 <head>
     <title>Adicionar NC</title>
-    <link rel="icon" type="image/png" href="../imagens/logoIcone.ico"/>
+    <link rel="icon" type="image/png" href="../Imagens/IconeNovoAzul.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
@@ -91,28 +91,34 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                         <label class="w3-text-deep-purple"><b>Responsável</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="resp" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Indique o responsável por essa NC." required></p>
                         <p>
-                        <label class="w3-text-deep-purple"><b>Classificação da NC</b></label>
-                        <br>
-                        <?php
-                            $sql = "SELECT * FROM classificacao";
-                            echo "<select class='w3-input w3-border w3-light-grey' name='class' style='width:40%; height:4.5%; padding:0%; padding-left:8px' title='Selecione a Classificação da NC.'>";
-                            if ($result = mysqli_query($conn, $sql)) {
-                                if (mysqli_num_rows($result) > 0) {
-                                    while ($row = mysqli_fetch_assoc($result)) {
-                                        echo "";
-                                        echo "<option value=";
-                                        echo $row['class'];
-                                        echo "|";
-                                        echo $row['tempo'];
-                                        echo ">";
-                                        echo $row['class'];
-                                        echo "</option>";
-                                        }
-                                    }
-                                }
-                            echo "</select>";
-                        ?>
+                        <label class="w3-text-deep-purple"><b>Classificação da NC e Prazo recomendado</b></label><br>
+                        <input id="a" type="radio" name="class" value="Advertência (Não se Aplica)" checked="checked">
+                        <label for="a">Advertência (Não se Aplica)</label><br>
+                        <input id="bs" type="radio" name="class" value="Baixa-Simples">
+                        <label for="bs">Baixa-Simples > Recomendado 4 dias</label><br>
+                        <input id="bc"type="radio" name="class" value="Baixa-Complexa">
+                        <label for="bc">Baixa-Complexa > Recomendado 5 dias</label><br>
+                        <input id="ms" type="radio" name="class" value="Média-Simples">
+                        <label for="ms">Média-Simples > Recomendado 3 dias</label><br>
+                        <input id="mc" type="radio" name="class" value="Média-Complexa">
+                        <label for="mc">Média-Complexa > Recomendado 4 dias</label><br>
+                        <input id="as" type="radio" name="class" value="Alta-Simples">
+                        <label for="as">Alta-Simples > Recomendado 2 dias</label><br>
+                        <input id="ac" type="radio" name="class" value="Alta-Complexa">
+                        <label for="ac">Alta-Complexa > Recomendado 3 dias</label><br>
+                        <input id="us" type="radio" name="class" value="Urgente-Simples">
+                        <label for="us">Urgente-Simples > Recomendado 1 dia</label><br>
+                        <input id="uc" type="radio" name="class" value="Urgente-Complexa">
+                        <label for="uc">Urgente-Complexa > Recomendado 2 dias</label><br>
                         </p>
+                        <p>
+                        <?php
+                            $date = date("Y-m-d");
+                        ?>
+                        <label class="w3-text-deep-purple"><b>Data de Notificação</b></label>
+                        <input class="w3-input w3-border w3-light-grey" name="emissao" type="date" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Data em que a NC está sendo emitida." value="<?php echo $date; ?>" required readonly="">
+                        <label class="w3-text-deep-purple"><b>Prazo</b></label>
+                        <input class="w3-input w3-border w3-light-grey" name="prazo" type="date" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Data para conclusão da correção da NC." value="<?php echo $date; ?>" required></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Informações do Checklist</b></label>
                         <br>
@@ -125,6 +131,8 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                                         echo "";
                                         echo "<option value=";
                                         echo $row["idAvaliacao"];
+                                        echo "|";
+                                        echo $row["artefato"];
                                         echo ">";
                                         echo $row['nomeCheck'];
                                         echo "</option>";
@@ -136,7 +144,6 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                         </p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Salvar na Auditoria</b></label>
-                        <!--Salvar na auditoria está certo?-->
                         <br>
                         <?php
                             $sql = "SELECT * FROM auditoria";
