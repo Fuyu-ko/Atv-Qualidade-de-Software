@@ -80,13 +80,13 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
             $sql = "SELECT * FROM (nConformidades JOIN checklist ON idAvaliacaoNc = idAvaliacao) 
             JOIN itemCheck ON idCheck = idAvaliacao WHERE idCheck = $id";
             
-            $total=mysqli_query($conn, "SELECT count(checkagem) as t from itemCheck");
+            $total=mysqli_query($conn, "SELECT count(checkagem) as t from itemCheck WHERE idCheck =$id");
             $dataT=mysqli_fetch_assoc($total);
 
-            $nao=mysqli_query($conn, "SELECT count(checkagem) as n from itemCheck WHERE checkagem='Não'");
+            $nao=mysqli_query($conn, "SELECT count(checkagem) as n from itemCheck WHERE checkagem='Não' AND  idCheck =$id");
             $dataN=mysqli_fetch_assoc($nao);
 
-            $na=mysqli_query($conn, "SELECT count(checkagem) as na from itemCheck WHERE checkagem='Não Aplicável'");
+            $na=mysqli_query($conn, "SELECT count(checkagem) as na from itemCheck WHERE checkagem='Não Aplicável' AND  idCheck =$id");
             $dataNA=mysqli_fetch_assoc($na);
 
             //calculo: 1-(nc/total-na)
