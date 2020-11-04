@@ -83,13 +83,13 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                         <input type="hidden" id="acaoForm" name="acaoForm" value="Cada">
                         <p>
                         <label class="w3-text-deep-purple"><b>Não conformidade</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="nc" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Indique qual foi a NC encontrada." required></p>
+                        <input class="w3-input w3-border w3-light-grey" name="nc" type="text" title="Indique qual foi a NC encontrada." required></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Ação Corretiva indicada</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="aCorretiva" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Indique qual Ação Corretiva é a mais indicada para ser tomada." required></p>
+                        <input class="w3-input w3-border w3-light-grey" name="aCorretiva" type="text" title="Indique qual Ação Corretiva é a mais indicada para ser tomada." required></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Responsável</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="resp" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Indique o responsável por essa NC." required></p>
+                        <input class="w3-input w3-border w3-light-grey" name="resp" type="text" title="Indique o responsável por essa NC." required></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Classificação da NC e Prazo recomendado</b></label><br>
                         <input id="a" type="radio" name="class" value="Advertência (Não se Aplica)" checked="checked">
@@ -116,9 +116,9 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                             $date = date("Y-m-d");
                         ?>
                         <label class="w3-text-deep-purple"><b>Data de Notificação</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="emissao" type="date" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Data em que a NC está sendo emitida." value="<?php echo $date; ?>" required readonly="">
+                        <input class="w3-input w3-border w3-light-grey" name="emissao" type="date" title="Data em que a NC está sendo emitida." value="<?php echo $date; ?>" required readonly="">
                         <label class="w3-text-deep-purple"><b>Prazo</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="prazo" type="date" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Data para conclusão da correção da NC." value="<?php echo $date; ?>" required></p>
+                        <input class="w3-input w3-border w3-light-grey" name="prazo" type="date" title="Data para conclusão da correção da NC." value="<?php echo $date; ?>" required></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Informações do Checklist</b></label>
                         <br>

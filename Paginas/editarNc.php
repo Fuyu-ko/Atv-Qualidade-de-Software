@@ -98,16 +98,18 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                         <input type="hidden" id="Id" name="id" value="<?php echo $row['idNC']; ?>">
                         <p>
                         <label class="w3-text-deep-purple"><b>Não conformidade</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="nc" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$"
+                        <input class="w3-input w3-border w3-light-grey" name="nc" type="text"
                         title="NC encontrada. (Não é possível alterar)" 
                         value="<?php echo $row['NcEncontradas']?>" required readonly></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Ação Corretiva indicada</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="aCorretiva" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Indique qual Ação Corretiva é a mais indicada para ser tomada."
+                        <input class="w3-input w3-border w3-light-grey" name="aCorretiva" type="text" 
+                        title="Indique qual Ação Corretiva é a mais indicada para ser tomada."
                         value="<?php echo $row['acaoCorretiva']?>" required></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Responsável</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="resp" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Responsável por essa NC. (Não é possível alterar)" value="<?php echo $row['responsavel']?>"
+                        <input class="w3-input w3-border w3-light-grey" name="resp" type="text" 
+                        title="Responsável por essa NC. (Não é possível alterar)" value="<?php echo $row['responsavel']?>"
                         required readonly></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Classificação da NC e Prazo recomendado</b></label><br>
@@ -145,15 +147,19 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                             $date = date("Y-m-d");
                         ?>
                         <label class="w3-text-deep-purple"><b>Data de Notificação</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="emissao" type="date" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Data em que a NC está sendo emitida." value="<?php echo $date; ?>" required readonly="">
+                        <input class="w3-input w3-border w3-light-grey" name="emissao" type="date"
+                        title="Data em que a NC está sendo emitida." value="<?php echo $date; ?>" required readonly="">
                         <label class="w3-text-deep-purple"><b>Prazo inicial</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="prazo" type="date" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Data para conclusão da correção da NC. (Não é possível alterar)" 
+                        <input class="w3-input w3-border w3-light-grey" name="prazo" type="date"
+                        title="Data para conclusão da correção da NC. (Não é possível alterar)" 
                         value="<?php echo $row['prazo']; ?>" required readonly>
                         <label class="w3-text-deep-purple"><b>Novo Prazo</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="nPrazo" type="date" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Nova data para conclusão da correção da NC." 
+                        <input class="w3-input w3-border w3-light-grey" name="nPrazo" type="date"
+                        title="Nova data para conclusão da correção da NC." 
                         value="<?php echo $row['prazo']; ?>" required>
                         <label class="w3-text-deep-purple"><b>Data para reavaliação</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="reav" type="date" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Data para reavaliação da correção da NC."></p>
+                        <input class="w3-input w3-border w3-light-grey" name="reav" type="date"
+                        title="Data para reavaliação da correção da NC."></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Informações do Checklist</b></label>
                         <br>
@@ -231,7 +237,8 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                         </p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Data Resolução</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="dRes" type="date" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Nova data para conclusão da correção da NC."></p>
+                        <input class="w3-input w3-border w3-light-grey" name="dRes" type="date"
+                        title="Nova data para conclusão da correção da NC."></p>
                         <p>
                         <input type="submit" value="Confirmar" class="w3-btn w3-green" >
                         <input type="button" value="Cancelar" class="w3-btn w3-red" 

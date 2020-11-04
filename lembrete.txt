@@ -62,3 +62,7 @@ Alta-Simples ... 2 dias
 Alta-Complexa ... 3 dias
 Urgente-Simples ... 1 dia
 Urgente-Complexa ... 2 dias
+
+>> pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$"
+- Tirado do código
+- Queria indicar o limite, mas vejo isso dps

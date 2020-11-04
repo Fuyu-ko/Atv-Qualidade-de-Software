@@ -97,7 +97,6 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                                     <p>
                                     <label class="w3-text-deep-purple"><b>Pergunta</b></label>
                                     <input class="w3-input w3-border w3-light-grey" name="pergunta" type="text" 
-                                    pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" 
                                     value="<?php echo $row['pergunta']; ?>"
                                     title="Indique a pergunta a ser respondida." required></p>
                                     <p>
@@ -116,13 +115,11 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                                     <p>
                                     <label class="w3-text-deep-purple"><b>Item</b></label>
                                     <input class="w3-input w3-border w3-light-grey" name="item" type="text" 
-                                    pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" 
                                     value="<?php echo $row['item']; ?>"
                                     title="Indique o Item avaliado." required></p>
                                     <p>
                                     <label class="w3-text-deep-purple"><b>Observações</b></label>
                                     <input class="w3-input w3-border w3-light-grey" name="obs" type="text" 
-                                    pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" 
                                     value="<?php echo $row['obs']; ?>"
                                     title="Escreva as Observações."></p>
                                     <p>

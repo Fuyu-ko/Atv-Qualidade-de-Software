@@ -84,7 +84,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                         <input type="hidden" id="acaoForm" name="acaoForm" value="Cada">
                         <p>
                         <label class="w3-text-deep-purple"><b>Pergunta</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="pergunta" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Indique qual foi a NC encontrada." required></p>
+                        <input class="w3-input w3-border w3-light-grey" name="pergunta" type="text" title="Indique qual foi a NC encontrada." required></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Check</b></label><br>
                         <input type="radio" id="Sim" name="check" value="Sim">
@@ -96,10 +96,10 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                         </p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Item</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="item" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Indique o responsável por essa NC." required></p>
+                        <input class="w3-input w3-border w3-light-grey" name="item" type="text" title="Indique o responsável por essa NC." required></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Observações</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="obs" type="text" pattern="[a-zA-Z0-9\u00C0-\u00FF ]{1,100}$" title="Indique o responsável por essa NC."></p>
+                        <input class="w3-input w3-border w3-light-grey" name="obs" type="text" title="Indique o responsável por essa NC."></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Salvando no Checlist</b></label>
                         <br>

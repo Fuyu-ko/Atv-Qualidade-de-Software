@@ -77,8 +77,10 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
             mysqli_query($conn,'SET character_set_results=utf8');
 
             // Faz Select na Base de Dados
-            $sql = "SELECT * FROM (nConformidades JOIN checklist ON idAvaliacaoNc = idAvaliacao) 
-            JOIN itemCheck ON idCheck = idAvaliacao WHERE idCheck = $id";
+
+            $sql = "SELECT * FROM checklist JOIN itemCheck ON idCheck = idAvaliacao WHERE idCheck = $id";
+//            $sql = "SELECT * FROM (nConformidades JOIN checklist ON idAvaliacaoNc = idAvaliacao) 
+  //          JOIN itemCheck ON idCheck = idAvaliacao WHERE idCheck = $id";
             
             $total=mysqli_query($conn, "SELECT count(checkagem) as t from itemCheck WHERE idCheck =$id");
             $dataT=mysqli_fetch_assoc($total);
@@ -150,11 +152,14 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                             echo "</td><td>";
                             echo $row["checkagem"];
                             echo "</td><td>";
+                            $sql2 = "SELECT * FROM (nConformidades JOIN checklist ON idAvaliacaoNc = idAvaliacao) 
+                            JOIN itemCheck ON idCheck = idAvaliacao WHERE idCheck = $id";
                             if($row["checkagem"]=='Não'){
                                 $itemR =  $row["NcEncontradas"];
                             }else{
                                 $itemR = "";
                             }
+                            
                             echo $itemR;
                             echo "</td><td>";
                             echo $row["obs"];
