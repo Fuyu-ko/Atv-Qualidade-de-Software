@@ -113,6 +113,11 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                                     <label for="Não aplicável">Não aplicável</label><br>
                                     </p>
                                     <p>
+                                    <label class="w3-text-deep-purple"><b>Não Conformidade</b></label>
+                                    <input class="w3-input w3-border w3-light-grey" name="nce" type="text" 
+                                    value="<?php echo $row['NcEncontrada']; ?>"
+                                    title="Indique a Nc Encontrada no item avaliado."></p>
+                                    <p>
                                     <label class="w3-text-deep-purple"><b>Item</b></label>
                                     <input class="w3-input w3-border w3-light-grey" name="item" type="text" 
                                     value="<?php echo $row['item']; ?>"

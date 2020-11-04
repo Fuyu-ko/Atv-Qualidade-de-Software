@@ -86,7 +86,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                         <input class="w3-input w3-border w3-light-grey" name="nCheck" type="text" title="Dê um nome para o Checklist." required></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Artefato avaliado</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="art" type="text" title="Dê um nome para o Checklist." required></p>
+                        <input class="w3-input w3-border w3-light-grey" name="art" type="text" title="Indique o artefato avaliado no Checklist." required></p>
                         <p>
                         <label class="w3-text-deep-purple"><b>Salvar na Auditoria</b></label>
                         <!--Salvar na auditoria está certo?-->

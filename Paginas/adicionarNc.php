@@ -116,7 +116,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                             $date = date("Y-m-d");
                         ?>
                         <label class="w3-text-deep-purple"><b>Data de Notificação</b></label>
-                        <input class="w3-input w3-border w3-light-grey" name="emissao" type="date" title="Data em que a NC está sendo emitida." value="<?php echo $date; ?>" required readonly="">
+                        <input class="w3-input w3-border w3-light-grey" name="emissao" type="date" title="Data em que a NC está sendo emitida." value="<?php echo $date; ?>" required>
                         <label class="w3-text-deep-purple"><b>Prazo</b></label>
                         <input class="w3-input w3-border w3-light-grey" name="prazo" type="date" title="Data para conclusão da correção da NC." value="<?php echo $date; ?>" required></p>
                         <p>

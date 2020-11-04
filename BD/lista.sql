@@ -39,6 +39,7 @@ create table itemCheck(
 	pergunta longtext not null,
 	checkagem enum("Sim", "Não", "Não aplicável") not null,
 	item text not null,
+    NcEncontrada longtext,
 	obs longtext,
     idCheck int not null,
     primary key(idItem),

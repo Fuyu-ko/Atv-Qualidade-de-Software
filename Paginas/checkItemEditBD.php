@@ -54,6 +54,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 		$item		= $_POST['item'];
 		$obs	 	= $_POST['obs'];
 		$id 		= $_POST['id'];
+		$nce 		= $_POST['nce'];
 
 		// Cria conexão
 		$conn = mysqli_connect($servername, $username, $password, $database);
@@ -74,7 +75,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 
 		// Faz Insert na Base de Dados
 		$sql = "UPDATE itemCheck 
-		SET pergunta='$perg', checkagem='$check', item='$item', obs='$obs' WHERE idItem = '$id'";
+		SET pergunta='$perg', checkagem='$check', item='$item', obs='$obs', NcEncontrada='$nce' WHERE idItem = '$id'";
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = mysqli_query($conn, $sql)) {
 			echo "Item Atualizado!";

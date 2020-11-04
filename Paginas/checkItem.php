@@ -152,14 +152,11 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                             echo "</td><td>";
                             echo $row["checkagem"];
                             echo "</td><td>";
-                            $sql2 = "SELECT * FROM (nConformidades JOIN checklist ON idAvaliacaoNc = idAvaliacao) 
-                            JOIN itemCheck ON idCheck = idAvaliacao WHERE idCheck = $id";
                             if($row["checkagem"]=='Não'){
-                                $itemR =  $row["NcEncontradas"];
+                                $itemR =  $row["NcEncontrada"];
                             }else{
                                 $itemR = "";
                             }
-                            
                             echo $itemR;
                             echo "</td><td>";
                             echo $row["obs"];

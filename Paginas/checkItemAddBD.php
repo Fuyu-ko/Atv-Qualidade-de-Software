@@ -73,7 +73,7 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
 			mysqli_query($conn,'SET character_set_results=utf8');
 
 		// Faz Insert na Base de Dados
-		$sql = "INSERT INTO itemCheck 
+		$sql = "INSERT INTO itemCheck (idItem, pergunta, checkagem, item, obs, idCheck)
 		VALUES (DEFAULT, '$perg', '$check', '$item', '$obs', '$id')";
 		echo "<div class='w3-responsive w3-card-4'>";
 		if ($result = mysqli_query($conn, $sql)) {
