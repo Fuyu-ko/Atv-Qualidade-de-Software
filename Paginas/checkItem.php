@@ -77,7 +77,24 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
             mysqli_query($conn,'SET character_set_results=utf8');
 
             // Faz Select na Base de Dados
-            $sql = "SELECT * FROM itemCheck WHERE idCheck = $id";
+            $sql = "SELECT * FROM (nConformidades JOIN checklist ON idAvaliacaoNc = idAvaliacao) 
+            JOIN itemCheck ON idCheck = idAvaliacao WHERE idCheck = $id";
+            
+            $total=mysqli_query($conn, "SELECT count(checkagem) as t from itemCheck");
+            $dataT=mysqli_fetch_assoc($total);
+
+            $nao=mysqli_query($conn, "SELECT count(checkagem) as n from itemCheck WHERE checkagem='Não'");
+            $dataN=mysqli_fetch_assoc($nao);
+
+            $na=mysqli_query($conn, "SELECT count(checkagem) as na from itemCheck WHERE checkagem='Não Aplicável'");
+            $dataNA=mysqli_fetch_assoc($na);
+
+            //calculo: 1-(nc/total-na)
+            $aderencia = 1 - ($dataN['n'] / ($dataT['t'] - $dataNA['na'])); 
+            $pAderencia = number_format((float)$aderencia, 2, '.', '')."%";
+
+            echo "Porcentagem de Aderência: ".$pAderencia;
+
             echo "<div class='w3-responsive w3-card-4'>";
             if ($result = mysqli_query($conn, $sql)) {
                 //NÃO CONSIGO CENTRALIZAR ISSO
@@ -86,8 +103,9 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                 echo "    <th width='10%'>Id</th>";
                 echo "    <th width='15%'>Obj Avaliado</th>";
                 echo "    <th width='20%'>Pergunta</th>";
+                echo "    <th width='10%'>NC</th>";
                 echo "    <th width='10%'>Check</th>";
-                echo "    <th width='35%'>OBS</th>";
+                echo "    <th width='25%'>OBS</th>";
                 echo "    <th width='10%'>Editar</th>";
                 echo "  </tr>";
 
@@ -104,6 +122,8 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
                             echo $row["item"];
                             echo "</td><td>";
                             echo $row["pergunta"];
+                            echo "</td><td>";
+                            echo $row["NcEncontradas"];
                             echo "</td><td>";
                             echo $row["checkagem"];
                             echo "</td><td>";
@@ -124,13 +144,14 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
             } else {
                 echo "Erro executando SELECT: " . mysqli_error($conn);
             }
-
-            mysqli_close($conn);  //Encerra conexao com o BD
-
+                mysqli_close($conn);  //Encerra conexao com o BD
             ?>
             <p>
                 <input type="button" value="Adicionar Pergunta" class="w3-btn w3-blue" 
-                onclick="window.location.href='../Paginas/checkItemAdd.php?id=<?php echo $id; ?>'"></p>
+                onclick="window.location.href='../Paginas/checkItemAdd.php?id=<?php echo $id; ?>'">
+                <input type="button" value="Voltar" class="w3-btn w3-blue" 
+                onclick="window.location.href='../Paginas/check.php'">
+            </p>
         </div>
     </div>
 

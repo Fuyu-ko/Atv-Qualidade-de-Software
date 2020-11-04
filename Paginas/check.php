@@ -125,6 +125,8 @@ Equipe: Ana Schran, Gabriel Barboza e Lohan Akim
             <p>
                 <input type="button" value="Adicionar CheckList" class="w3-btn w3-blue" 
                 onclick="window.location.href='../Paginas/checkAdd.php'">
+                <input type="button" value="Voltar" class="w3-btn w3-blue" 
+                onclick="window.location.href='../Paginas/listarAudi.php'">
             </p>
         </div>
     </div>
